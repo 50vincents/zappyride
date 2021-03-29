@@ -1,0 +1,30 @@
+.rates {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rates_title {
+  font-size: 30px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.rates_body {
+  font-size: 20px;
+  padding: 20px;
+}
+
+.rates_buttons {
+  display: flex;
+}
+
+.rates_button {
+  border: none;
+  padding: 20px;
+  border: 1px solid green;
+}
+
+.rates_button:hover {
+  cursor: pointer;
+}
