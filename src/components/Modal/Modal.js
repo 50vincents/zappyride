@@ -28,9 +28,11 @@ function Modal({showModal, setShowModal}) {
   if(!showModal) {
     return null;
   }
+
   return (
     <div className="modal">
       <div className="modal_content">
+        <button className="modal_button" onClick={() => {setShowModal(false); resetWhenClosed();}}>X</button>
         {showRates ?  (
           <Rates switchMilesAndRates={switchMilesAndRates} />
         ) : showMiles ? (
@@ -40,7 +42,6 @@ function Modal({showModal, setShowModal}) {
         ) :
           <></>
         }
-        <button className="butt" onClick={() => {setShowModal(false); resetWhenClosed();}}>Close</button>
       </div>
     </div>
   )
