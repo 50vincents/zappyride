@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import Rates from '../Rates/Rates';
-import Miles from '../Miles/Miles';
-import Hours from '../Hours/Hours';
-import Calculations from '../Calculations/Calculations';
-import './Modal.css';
+import React, { useState } from "react";
+import Rates from "../Rates/Rates";
+import Miles from "../Miles/Miles";
+import Hours from "../Hours/Hours";
+import Calculations from "../Calculations/Calculations";
+import "./Modal.css";
 
 function Modal({showModal, setShowModal}) {
   const [showRates, setShowRates] = useState(true);
@@ -11,10 +11,12 @@ function Modal({showModal, setShowModal}) {
   const [showHours, setShowHours] = useState(false);
   const [showCalc, setShowCalc] = useState(false);
 
+  // Functions to switch to different components
   const switchMilesAndRates = () => {
     setShowMiles(!showMiles);
     setShowRates(!showRates);
   };
+
   const switchMilesAndHours = () => {
     setShowMiles(!showMiles);
     setShowHours(!showHours);
@@ -25,6 +27,7 @@ function Modal({showModal, setShowModal}) {
     setShowCalc(!showCalc);
   }
 
+  // Clear state when closed
   const resetWhenClosed = () => {
     setShowRates(true);
     setShowMiles(false);
@@ -35,6 +38,7 @@ function Modal({showModal, setShowModal}) {
   if(!showModal) {
     return null;
   }
+
   return (
     <div className="modal">
       <div className="modal_content">
@@ -53,6 +57,6 @@ function Modal({showModal, setShowModal}) {
       </div>
     </div>
   )
-  
 }
+
 export default Modal

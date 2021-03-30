@@ -10,15 +10,17 @@
   font-size: 40px;
   font-weight: bold;
   padding: 20px;
-
 }
+
 .rates_body {
   font-size: 20px;
   padding: 20px;
 }
+
 .rates_buttons {
   display: flex;
 }
+
 .rates_button {
   border: none;
   padding: 20px;

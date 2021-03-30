@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
-import { storeMiles } from '../../features/data/dataSlice';
-import './Miles.css';
+import React, { useState } from "react"
+import { useDispatch } from "react-redux";
+import { storeMiles } from "../../features/data/dataSlice";
+import "./Miles.css";
 
 function Miles({switchMilesAndRates, switchMilesAndHours}) {
   const dispatch = useDispatch();
@@ -29,4 +29,5 @@ function Miles({switchMilesAndRates, switchMilesAndHours}) {
     </div>
   )
 }
+
 export default Miles

@@ -1,8 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { useDispatch } from 'react-redux';
-import { storeHours } from '../../features/data/dataSlice';
-
-import './Hours.css';
+import React, { useState, useRef, useEffect } from "react"
+import { useDispatch } from "react-redux";
+import { storeHours } from "../../features/data/dataSlice";
+import "./Hours.css";
 
 function Hours({switchMilesAndHours, switchHoursAndCalc}) {
   const dispatch = useDispatch();
@@ -19,7 +18,6 @@ function Hours({switchMilesAndHours, switchHoursAndCalc}) {
     if (isInitialMount.current) {
       isInitialMount.current = false;
    } else {
-       // Your useEffect code here to be run on update
       storeData();
       switchHoursAndCalc();
    }
@@ -37,4 +35,5 @@ function Hours({switchMilesAndHours, switchHoursAndCalc}) {
     </div>
   )
 }
+
 export default Hours
