@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Rates from '../Rates/Rates';
 import Miles from '../Miles/Miles';
 import Hours from '../Hours/Hours';
-import Calc from '../Calc/Calc';
+import Calculations from '../Calculations/Calculations';
 import './Modal.css';
 
 function Modal({showModal, setShowModal}) {
@@ -39,6 +39,7 @@ function Modal({showModal, setShowModal}) {
 
   return (
     <div className="modal">
+      <button className="modal_button" onClick={() => {setShowModal(false); resetWhenClosed();}}>X</button>
       <div className="modal_content">
         {showRates ?  (
           <Rates switchMilesAndRates={switchMilesAndRates} />
@@ -47,7 +48,7 @@ function Modal({showModal, setShowModal}) {
         ) : showHours ? (
           <Hours switchMilesAndHours={switchMilesAndHours} switchHoursAndCalc={switchHoursAndCalc}/>
         ) : showCalc ? (
-          <Calc />
+          <Calculations />
         ) :
           <></>
         }

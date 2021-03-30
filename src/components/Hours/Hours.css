@@ -4,9 +4,20 @@
   align-items: center;
   padding: 30px;
   border: 1px solid black;
+  margin: 50%;
+}
+
+.hours_title {
+  font-size: 40px;
+  font-weight: bold;
+  padding: 20px;
 }
 
 .hours_buttons {
+  display: flex;
+}
+
+.hours_button {
   border: none;
   padding: 20px;
   margin: 20px;
@@ -14,6 +25,14 @@
   color: white;
   font-weight: bold;
   border-radius: 5px;
-  font-size: 30px;
+  font-size: 20px;
   border: 1px solid black;
+}
+
+.hours_button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transition: 0.5s;
 }

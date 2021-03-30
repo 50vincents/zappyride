@@ -24,8 +24,15 @@
 
 .modal_button {
   position: fixed;
-  right: 25%;
   border: none;
   font-size: 20px;
-  padding: 10px;
+  background-color: white;
+  top: 15%;
+  right: 26%;
+}
+
+.modal_button:hover {
+  cursor: pointer;
+  color: gray;
+  transition: 0.25s;
 }

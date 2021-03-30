@@ -4,7 +4,7 @@ import toread from './USA_NY_Buffalo.725280_TMY2.csv';
 import { useSelector } from 'react-redux';
 import { selectHours, selectMiles, selectRate } from '../../features/data/dataSlice';
   
-function Calc() {
+function Calculations() {
   const hours = useSelector(selectHours);
   const miles = useSelector(selectMiles);
   const rate = useSelector(selectRate);
@@ -110,4 +110,4 @@ function Calc() {
   )
 }
 
-export default Calc
+export default Calculations
