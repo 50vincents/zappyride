@@ -5,9 +5,9 @@
 }
 
 .miles_title {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
-  padding: 20px;
+  padding: 30px;
 }
 
 .miles_buttons {
@@ -17,14 +17,14 @@
 
 .miles_button {
   border: none;
-  padding: 20px;
-  margin: 20px;
+  padding: 20px 30px 20px 30px;
   background-color: black;
   color: white;
   font-weight: bold;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 15px;
   border: 1px solid black;
+  margin: 20px;
 }
 
 .miles_button:hover {
@@ -41,7 +41,47 @@
   padding-left: 0;
   font-size: 20px;
   color: gray;
-  width: 85%;
+  width: 70%;
   outline-width: 0;
   border-bottom: 1px solid gray;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .miles {
+    border: 1px solid black;
+    margin: 40px;
+  }
+
+  .miles_title {
+    font-size: 30px;
+  }
+
+  .miles_input {
+    font-size: 25px;
+    width: 85%;
+  }
+
+  .miles_button {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .miles {
+    border: 1px solid black;
+    margin: 40px;
+  }
+
+  .miles_title {
+    font-size: 40px;
+  }
+
+  .miles_input {
+    font-size: 25px;
+    width: 85%;
+  }
+
+  .miles_button {
+    font-size: 25px;
+  }
 }
