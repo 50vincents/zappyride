@@ -1,14 +1,11 @@
 .miles {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   align-items: center;
-  margin: 50%;
-  padding: 20px;
 }
 
 .miles_title {
-  font-size: 40px;
+  font-size: 20px;
   font-weight: bold;
   padding: 20px;
 }
