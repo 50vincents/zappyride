@@ -1,7 +1,4 @@
 .home_container {
-  display: flex;
-  flex-direction: column;
-  background-color: #131923;
   height: 100vh;
   background: url('https://www.electrive.com/wp-content/uploads/2018/07/tesla-model-3-03.png');
   background-size: cover;
@@ -9,26 +6,28 @@
 }
 
 .home_details {
+  position: fixed;
   display: flex;
   flex-direction: column;
   background-color: black;
   align-items: center;
-  height: 60%;
-  width: 30%;
+  height: 70%;
+  width: 35%;
   margin-left: 5%;
+  top: 15%;
+  justify-content: space-evenly;
 }
 
 .home_button {
   padding: 20px;
   border-radius: 5px;
   border: none;
-  font-size: 40px;
+  font-size: 20px;
   font-weight: bold;
   transition: 0.5s;
   border: 1px solid white;
   color: white;
   background-color: black;
-  margin-top: 40px;
   width: 75%;
 }
 
@@ -40,10 +39,55 @@
   color: black;
 }
 
-.home_title {
-  font-size: 50px;
-  color: white;
-  border-radius: 5px;
-  font-weight: bold;
-  padding: 40px;
+@media screen and (min-width: 1024px) {
+  .home_title {
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    padding: 40px;
+  }  
+
+  .home_button {
+    font-size: 30px;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .home_details {
+    width: 40%;
+  }
+
+  .home_title {
+    font-size: 40px;
+    color: white;
+    font-weight: bold;
+    padding: 30px;
+  }  
+}
+
+@media screen and (max-width: 767px) {
+  .home_container {
+    background-position: 50%;
+  }
+
+  .home_details {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    position: fixed;
+    width: 75%;
+    height: 75%;
+    top: 12%;
+    left: 8%;
+  }
+
+  .home_title {
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    padding: 30px;
+  }  
+
 }
