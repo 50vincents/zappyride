@@ -2,12 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px solid green;
 }
 
 .rates_title {
   font-size: 30px;
   font-weight: bold;
   padding: 20px;
+
 }
 
 .rates_body {
@@ -22,9 +24,11 @@
 .rates_button {
   border: none;
   padding: 20px;
+  margin: 20px;
   border: 1px solid green;
 }
 
 .rates_button:hover {
   cursor: pointer;
+
 }

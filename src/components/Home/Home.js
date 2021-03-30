@@ -8,8 +8,10 @@ function Home() {
 
   return (
     <div className='home_container'>
-      <div className="home_title">Thinking about switching to EV?</div>
-      <button className="home_button" onClick={() => setShowModal(true)}>Get Started</button>
+      <div className="home_details">
+        <div className="home_title">Thinking about switching to EV?</div>
+        <button className="home_button" onClick={() => setShowModal(true)}>Get Started</button>
+      </div>
       <Modal showModal={showModal} setShowModal={setShowModal}/>
     </div>
   )
