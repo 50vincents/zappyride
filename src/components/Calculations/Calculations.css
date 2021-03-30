@@ -57,6 +57,10 @@
 }
 
 @media screen and (max-width: 767px) {
+  .calculations {
+    overflow-y: scroll;
+  }
+
   .calculations_rates, .calculations_details, .calculations_plan { 
     font-size: 15px;
   }

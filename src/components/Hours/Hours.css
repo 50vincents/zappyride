@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid white;
 }
 
 .hours_title {
@@ -27,6 +26,7 @@
   border-radius: 5px;
   font-size: 15px;
   border: 1px solid black;
+  align-items: center;
 }
 
 .hours_previous {
