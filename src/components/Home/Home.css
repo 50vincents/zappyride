@@ -2,48 +2,24 @@
   display: flex;
   flex-direction: column;
   background-color: #131923;
-  height: 100vh;
-  background: url('https://www.electrive.com/wp-content/uploads/2018/07/tesla-model-3-03.png');
-  background-size: cover;
-  justify-content: center;
-}
-
-.home_details {
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-  align-items: center;
-  height: 60%;
-  width: 30%;
-  margin-left: 5%;
 }
 
 .home_button {
+  background-color: #131923;
   padding: 20px;
   border-radius: 5px;
-  border: none;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.5s;
-  border: 1px solid white;
   color: white;
-  background-color: black;
-  margin-top: 40px;
-  width: 75%;
 }
 
 .home_button:hover {
   cursor: pointer;
   transition: 0.5s;
-  background-color: white;
-  border: 1px solid black;
-  color: black;
+  background-color: orange;
+  border: 1px solid orange;
 }
 
 .home_title {
-  font-size: 50px;
+  font-size: 30px;
   color: white;
-  border-radius: 5px;
   font-weight: bold;
-  padding: 40px;
 }

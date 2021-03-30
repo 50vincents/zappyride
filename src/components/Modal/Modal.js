@@ -10,12 +10,11 @@ function Modal({showModal, setShowModal}) {
   const [showMiles, setShowMiles] = useState(false);
   const [showHours, setShowHours] = useState(false);
   const [showCalc, setShowCalc] = useState(false);
-  
+
   const switchMilesAndRates = () => {
     setShowMiles(!showMiles);
     setShowRates(!showRates);
   };
-
   const switchMilesAndHours = () => {
     setShowMiles(!showMiles);
     setShowHours(!showHours);
@@ -36,10 +35,8 @@ function Modal({showModal, setShowModal}) {
   if(!showModal) {
     return null;
   }
-
   return (
     <div className="modal">
-      <button className="modal_button" onClick={() => {setShowModal(false); resetWhenClosed();}}>X</button>
       <div className="modal_content">
         <button className="modal_button" onClick={() => {setShowModal(false); resetWhenClosed();}}>X</button>
         {showRates ?  (
@@ -56,8 +53,6 @@ function Modal({showModal, setShowModal}) {
       </div>
     </div>
   )
-
   
 }
-
 export default Modal

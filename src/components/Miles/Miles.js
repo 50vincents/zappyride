@@ -29,5 +29,4 @@ function Miles({switchMilesAndRates, switchMilesAndHours}) {
     </div>
   )
 }
-
 export default Miles

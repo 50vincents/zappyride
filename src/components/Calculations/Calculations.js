@@ -3,7 +3,7 @@ import * as d3 from 'd3';
 import toread from './USA_NY_Buffalo.725280_TMY2.csv';
 import { useSelector } from 'react-redux';
 import { selectHours, selectMiles, selectRate } from '../../features/data/dataSlice';
-  
+
 function Calculations() {
   const hours = useSelector(selectHours);
   const miles = useSelector(selectMiles);
@@ -92,9 +92,9 @@ function Calculations() {
 
 
   return (
-    <div className='calc'>
-      <div className="calc_title">Your bill impact adds ${newRateBill} to your bill from ${initialBill} to ${newRateABill}</div>
-      <div className="calc_title">Using other plan it would cost  
+    <div className='calculations'>
+      <div className="calculations_title">Your bill impact adds ${newRateBill} to your bill from ${initialBill} to ${newRateABill}</div>
+      <div className="calculations_title">Using other plan it would cost  
       {rate === 1 && newRateABill > newRateBBill ? (
         <div>{newRateBBill}. You should switch plans to save</div>
       ) : rate === 1 && newRateABill < newRateBBill ?(
@@ -105,7 +105,7 @@ function Calculations() {
         <div>{newRateABill}. You have the best deal.</div>
       )}
       </div>
-      
+
     </div>
   )
 }
