@@ -59,6 +59,7 @@
   .miles {
     border: 1px solid black;
     margin: 40px;
+    padding: 30px;
   }
 
   .miles_title {
@@ -72,6 +73,7 @@
 
   .miles_button {
     font-size: 20px;
+    width: 100px;
   }
 }
 
@@ -79,6 +81,7 @@
   .miles {
     border: 1px solid black;
     margin: 40px;
+    padding: 30px;
   }
 
   .miles_title {
@@ -92,5 +95,6 @@
 
   .miles_button {
     font-size: 25px;
+    width: 150px;
   }
 }
