@@ -46,7 +46,7 @@ function Modal({showModal, setShowModal}) {
         ) : showHours ? (
           <Hours switchMilesAndHours={switchMilesAndHours} switchHoursAndCalc={switchHoursAndCalc}/>
         ) : showCalc ? (
-          <Calculations />
+          <Calculations switchHoursAndCalc={switchHoursAndCalc}/>
         ) :
           <></>
         }

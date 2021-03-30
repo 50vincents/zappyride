@@ -3,8 +3,9 @@ import * as d3 from 'd3';
 import toread from './USA_NY_Buffalo.725280_TMY2.csv';
 import { useSelector } from 'react-redux';
 import { selectHours, selectMiles, selectRate } from '../../features/data/dataSlice';
+import './Calculations.css';
 
-function Calculations() {
+function Calculations({switchHoursAndCalc}) {
   const hours = useSelector(selectHours);
   const miles = useSelector(selectMiles);
   const rate = useSelector(selectRate);
@@ -77,7 +78,6 @@ function Calculations() {
       await calculateNewBill().then(() => {
         if(rate === 1) {
           setNewRateBill(newRateABill - initialBill);
-          console.log(newRateBill)
         } else if(rate === 2) {
           setNewRateBill(newRateBBill - initialBill);
         }
@@ -89,22 +89,29 @@ function Calculations() {
   console.log('rate b: ' + newRateBBill)
 
 
-
-
   return (
     <div className='calculations'>
-      <div className="calculations_title">Your bill impact adds ${newRateBill} to your bill from ${initialBill} to ${newRateABill}</div>
-      <div className="calculations_title">Using other plan it would cost  
-      {rate === 1 && newRateABill > newRateBBill ? (
-        <div>{newRateBBill}. You should switch plans to save</div>
-      ) : rate === 1 && newRateABill < newRateBBill ?(
-        <div>{newRateBBill}. You have a good deal.</div>
-      ) : rate === 2 && newRateBBill > newRateABill ? (
-        <div>{newRateABill}. You should switch to save.</div>
+      <div className="calculations_title">Converting to EV would add <span className="calculations_highlight">${newRateBill}</span> to your bill.</div>
+      {rate === 1 ? (
+        <div className="calculations_details">Your new bill would be <span className="calculations_highlight">${newRateABill}</span> up from <span className="calculations_highlight">${initialBill}</span>.</div>
+      ) : rate === 2 ? (
+        <div className="calculations_details">Your new bill would be <span className="calculations_highlight">${newRateBBill}</span> up from <span className="calculations_highlight">${initialBill}</span>.</div>
       ) : (
-        <div>{newRateABill}. You have the best deal.</div>
+        <></>
+      )
+      }
+      {rate === 1 && newRateABill > newRateBBill ? (
+        <div className="calculations_plan">Your current plan is <span className="calculations_highlight">Rate A</span>. By switching to <span className="calculations_highlight">Rate B</span>, your monthly cost would be <span className="calculations_highlight">${newRateBBill}</span>, saving <span className="calculations_highlight">${newRateABill-newRateBBill}</span>.</div>
+      ) : rate === 1 && newRateABill < newRateBBill ?(
+        <div className="calculations_plan">Your current plan is <span className="calculations_highlight">Rate A</span>. With <span className="calculations_highlight">Rate B</span>, your monthly cost would be ${newRateBBill}. You already have the best deal.</div>
+      ) : rate === 2 && newRateBBill > newRateABill ? (
+        <div className="calculations_plan">Your current plan is <span className="calculations_highlight">Rate B</span>. By switching to <span className="calculations_highlight">Rate A</span>, your monthly cost would be <span className="calculations_highlight">${newRateABill}</span>, saving <span className="calculations_highlight">${newRateBBill-newRateABill}</span>.</div>
+      ) : rate === 2 && newRateBBill < newRateABill ? (
+        <div className="calculations_plan">Your current plan is <span className="calculations_highlight">Rate B</span>. With <span className="calculations_highlight">Rate A</span>, your monthly cost would be <span className="calculations_highlight">${newRateABill}</span>. You already have the best deal.</div>
+      ) : (
+        <></>
       )}
-      </div>
+      <button className="calculations_button" onClick={() => switchHoursAndCalc()}>Previous</button>
 
     </div>
   )
