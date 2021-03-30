@@ -14,8 +14,9 @@ function Miles({switchMilesAndRates, switchMilesAndHours}) {
     );
   };
 
+  // Check if there is input when hitting enter key
   const handleKeyUp = (e) => {
-    // Enter
+    // Enter keycode
     if (e.keyCode === 13) {
       if(miles === '') {
         setValid(false);
@@ -26,32 +27,34 @@ function Miles({switchMilesAndRates, switchMilesAndHours}) {
     }
   }
 
-// storeData(); switchMilesAndHours();
+  // Check if there is input when hitting next button
+  const isValidInput = () => {
+    if(miles === '') {
+      setValid(false);
+    } else {
+      storeData();
+      switchMilesAndHours();
+    }
+  }
+
   return (
     <div className="miles">
-      <div className="miles_title">How many miles do you drive a year?</div>
+      <div className="miles_title">How many miles do you drive in a year?</div>
+      <input 
+        className="miles_input" 
+        value={miles} 
+        onChange={e => setMiles(e.target.value)}
+        placeholder="Enter miles"
+        onKeyUp={handleKeyUp}
+      />
       {valid ? (
-        <input 
-        className="miles_input" 
-        value={miles} 
-        onChange={e => setMiles(e.target.value)}
-        placeholder="Enter miles"
-        onKeyUp={handleKeyUp}
-        />
+        <></>
       ) : (
-        <>
-        <input 
-        className="miles_input" 
-        value={miles} 
-        onChange={e => setMiles(e.target.value)}
-        placeholder="Enter miles"
-        onKeyUp={handleKeyUp}
-        />
-        <div className="miles_invalid">Please enter miles driven</div>
-        </>
+      <div className="miles_invalid">Please enter miles driven</div>
       )}  
       <div className="miles_buttons">
         <button className="miles_button" onClick={() => switchMilesAndRates()}>Previous</button>
+        <button className="miles_button" onClick={() => isValidInput()}>Next</button>
       </div>
     </div>
   )

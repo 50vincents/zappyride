@@ -14,6 +14,9 @@ function Rates({switchMilesAndRates}) {
     );
   };
 
+  // When Rate button is clicked, value will change
+  // On change, data is stored in Redux and move to next screen 
+  // Does not advance on first mount
   useEffect(() => {
     if (isInitialMount.current) {
       isInitialMount.current = false;
