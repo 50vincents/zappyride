@@ -49,4 +49,23 @@
   transition: 0.5s;
 }
 
+.calculations_rates {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+}
 
+@media screen and (max-width: 767px) {
+  .calculations_rates, .calculations_details, .calculations_plan { 
+    font-size: 15px;
+  }
+
+  .calculations_title {
+    font-size: 25px;
+  }
+
+  .calculations_button {
+    font-size: 15px;
+  }
+}

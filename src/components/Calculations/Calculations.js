@@ -108,6 +108,7 @@ function Calculations({switchHoursAndCalc}) {
       ) : (
         <></>
       )}
+      <div className="calculations_rates">For reference, Rate A has a flat rate of $0.15/kWh. Rate B is a TOU rate of $0.20/kWh from 12-6 PM, and $0.08/kWh otherwise.</div>
       <button className="calculations_button" onClick={() => switchHoursAndCalc()}>Previous</button>
 
     </div>
