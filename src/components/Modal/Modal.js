@@ -41,6 +41,7 @@ function Modal({showModal, setShowModal}) {
     <div className="modal">
       <button className="modal_button" onClick={() => {setShowModal(false); resetWhenClosed();}}>X</button>
       <div className="modal_content">
+        <button className="modal_button" onClick={() => {setShowModal(false); resetWhenClosed();}}>X</button>
         {showRates ?  (
           <Rates switchMilesAndRates={switchMilesAndRates} />
         ) : showMiles ? (
