@@ -1,8 +1,17 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { storeMiles } from '../../features/data/dataSlice';
 import './Miles.css';
 
 function Miles({switchMilesAndRates, switchMilesAndHours}) {
+  const dispatch = useDispatch();
   const [miles, setMiles] = useState('');
+
+  const storeData = () => {
+    dispatch(
+      storeMiles(miles)
+    );
+  };
 
   return (
     <div className="miles">
@@ -15,7 +24,7 @@ function Miles({switchMilesAndRates, switchMilesAndHours}) {
       />
       <div className="miles_buttons">
         <button className="miles_button" onClick={() => switchMilesAndRates()}>Previous</button>
-        <button className="miles_button" onClick={() => switchMilesAndHours()}>Next</button>
+        <button className="miles_button" onClick={() => {switchMilesAndHours(); storeData();}}>Next</button>
       </div>
     </div>
   )

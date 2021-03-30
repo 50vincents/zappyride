@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import Rates from '../Rates/Rates';
 import Miles from '../Miles/Miles';
 import Hours from '../Hours/Hours';
+import Calc from '../Calc/Calc';
 import './Modal.css';
 
 function Modal({showModal, setShowModal}) {
   const [showRates, setShowRates] = useState(true);
   const [showMiles, setShowMiles] = useState(false);
   const [showHours, setShowHours] = useState(false);
+  const [showCalc, setShowCalc] = useState(false);
   
   const switchMilesAndRates = () => {
     setShowMiles(!showMiles);
@@ -19,10 +21,16 @@ function Modal({showModal, setShowModal}) {
     setShowHours(!showHours);
   };
 
+  const switchHoursAndCalc = () => {
+    setShowHours(!showHours);
+    setShowCalc(!showCalc);
+  }
+
   const resetWhenClosed = () => {
     setShowRates(true);
     setShowMiles(false);
     setShowHours(false);
+    setShowCalc(false);
   };
 
   if(!showModal) {
@@ -38,7 +46,9 @@ function Modal({showModal, setShowModal}) {
         ) : showMiles ? (
           <Miles switchMilesAndRates={switchMilesAndRates} switchMilesAndHours={switchMilesAndHours}/>
         ) : showHours ? (
-          <Hours switchMilesAndHours={switchMilesAndHours}/>
+          <Hours switchMilesAndHours={switchMilesAndHours} switchHoursAndCalc={switchHoursAndCalc}/>
+        ) : showCalc ? (
+          <Calc />
         ) :
           <></>
         }
