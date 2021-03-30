@@ -1,4 +1,4 @@
-import React, { useState }  from 'react'
+import React, { useEffect, useState, useRef }  from 'react'
 import { useDispatch } from 'react-redux';
 import { storeRate } from '../../features/data/dataSlice';
 import './Rates.css';
@@ -6,12 +6,23 @@ import './Rates.css';
 function Rates({switchMilesAndRates}) {
   const dispatch = useDispatch();
   const [rate, setRate] = useState('');
+  const isInitialMount = useRef(true);
 
-  const storeData = () => {
+  const storeData =  () => {
     dispatch(
       storeRate(rate)
     );
   };
+
+  useEffect(() => {
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+   } else {
+       // Your useEffect code here to be run on update
+      storeData();
+      switchMilesAndRates();
+   }
+  }, [rate])
 
   return (
     <div className='rates'>
@@ -21,7 +32,6 @@ function Rates({switchMilesAndRates}) {
         <button className="rates_button" onClick={() => setRate(1)}>Rate A </button>
         <button className="rates_button" onClick={() => setRate(2)}>Rate B </button>
       </div>
-      <button className="rates_next" onClick={() => {switchMilesAndRates(); storeData();}}>Next</button>
     </div>
   )
 }
